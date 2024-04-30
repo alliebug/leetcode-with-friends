@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "LC With Friends",
+    "version": "1.0",
+    "description": "Test leetcode interactions",
+    "permissions": ["activeTab", "storage", "webRequest", "cookies"],
+    "host_permissions": ["https://leetcode.com/problems/*"],
+    "action": {
+        "default_icon": "img/hello_extensions.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://leetcode.com/*"],
+            "css": ["src/content.css"],
+            "js": ["src/main.js"]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "matches": ["https://leetcode.com/*"],
+            "resources": ["src/*"]
+        }
+    ],
+    "background": {
+        "service_worker": "src/background.js",
+        "type": "module"
+    },
+    "minimum_chrome_version": "120"
+}

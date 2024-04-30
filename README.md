@@ -1,1 +1,1 @@
-# leetcode-with-friends
+Use `npm install --save @types/chrome` to get chrome types in VSCode.
